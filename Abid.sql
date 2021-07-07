@@ -39,7 +39,7 @@ CREATE TABLE `credential` (
   `token` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `userType` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `credential`
@@ -63,8 +63,7 @@ CREATE TABLE `question` (
   `option3` varchar(255) DEFAULT NULL,
   `option4` varchar(255) DEFAULT NULL,
   `correctOption` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 --
 -- Dumping data for table `question`
 --
@@ -90,7 +89,7 @@ CREATE TABLE `result` (
   `score` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `test_id` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `result`
@@ -113,7 +112,7 @@ CREATE TABLE `testinfo` (
   `passingMarks` varchar(255) DEFAULT NULL,
   `report` varchar(255) DEFAULT NULL,
   `publishDate` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `testinfo`

@@ -36,7 +36,7 @@ function checklogin()
                 // console.log(this.responseText);
                 resp = this.responseText;
                 if(resp=="Success"){
-                    window.location.href= "http://localhost/thinkexam/users/profile.php";
+                    window.location.href= "http://localhost/Abid/users/profile.php";
                 }
                 else{
                     // console.log(resp);

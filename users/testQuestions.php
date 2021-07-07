@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(!isset($_SESSION['name'])){
-        header("location: http://localhost/thinkexam/users/login.php");
+        header("location: http://localhost/Abid/users/login.php");
     }
 
     include 'database/config.php';
@@ -16,7 +16,7 @@
     }
 
     if (in_array($test_id, $testGiven)){
-        header("location: http://localhost/thinkexam/users/tests.php");
+        header("location: http://localhost/Abid/users/tests.php");
     }
 ?>
 
@@ -124,13 +124,13 @@
             </div><br>
 
             <p style="text-align: center;">   
-                <a class="cancel" href="http://localhost/thinkexam/users/tests.php">Cancel</a>
+                <a class="cancel" href="http://localhost/Abid/users/tests.php">Cancel</a>
             </p>
             
             <!-- footer -->
             <hr>
             <div class="text-center">
-                <p>Powered by <a href="https://www.thinkexam.com/" target="_blank" style="color:red">Think Exam</a></p>
+                <p>Powered by <a href="https://www.Abid.com/" target="_blank" style="color:red">Think Exam</a></p>
             </div>
         
         </form>

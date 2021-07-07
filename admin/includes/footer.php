@@ -9,7 +9,7 @@
           <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
               <li class="nav-item">
-                <a href="https://www.thinkexam.com/" class="nav-link" target="_blank">Think Exam</a>
+                <a href="https://www.Abid.com/" class="nav-link" target="_blank">Think Exam</a>
               </li>
               <li class="nav-item">
                 <a href="" class="nav-link" target="_blank">About Us</a>

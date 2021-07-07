@@ -54,7 +54,7 @@ function checkregister()
                 console.log(this.responseText);
                 document.getElementById("err").innerHTML=this.responseText;
                 document.getElementById("register").reset();
-                // window.location.href= "http://localhost/thinkexam/users/login.php";
+                // window.location.href= "http://localhost/Abid/users/login.php";
             }
         }
         xhr.send(dataString);

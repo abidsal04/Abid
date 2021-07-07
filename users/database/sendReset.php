@@ -26,7 +26,7 @@
 
     To reset your password, please visit the following URL:
 
-    http://localhost/thinkexam/users/resetPassword.php?token=$token
+    http://localhost/Abid/users/resetPassword.php?token=$token
 
     Thank you for using Think Exam.
 

@@ -53,7 +53,7 @@
 
     To confirm your email address, please visit the following URL:
 
-    http://localhost/thinkexam/users/changeEmailActivate.php?token=$token
+    http://localhost/Abid/users/changeEmailActivate.php?token=$token
 
     Thank you for using Think Exam.
 

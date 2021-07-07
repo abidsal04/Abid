@@ -102,7 +102,7 @@
     <h1 style="text-align: center;">Thank You!</h1>
     <p style="text-align: center;">Your submission has been received. We will notify you on mail.</p>
     <p style="text-align: center;">   
-        <a class="button" href="http://localhost/thinkexam/users/profile.php">Home</a>
+        <a class="button" href="http://localhost/Abid/users/profile.php">Home</a>
     </p>
 </div>
 </body>
