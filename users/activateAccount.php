@@ -11,11 +11,11 @@ include "database/config.php";
         if($query){
             if(isset($_SESSION['msg'])){
                 $_SESSION['msg'] = "Account activated succesfully";
-                header("location:login.php");
+                header("location:index.php");
             }
             else{
                 $_SESSION['msg'] = "You are logged out";
-                header("location:login.php");
+                header("location:index.php");
             }
         }
         

@@ -122,7 +122,7 @@ function resetPassword(){
                 // console.log(this.responseText);
                 document.getElementById("err").innerHTML=this.responseText;
                 document.getElementById("reset").reset();
-                // window.location.href = "login.php";
+                // window.location.href = "index.php";
                 }
             }
         xhr.send(dataString);

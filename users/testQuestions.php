@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(!isset($_SESSION['name'])){
-        header("location: http://localhost/Abid/users/login.php");
+        header("location: http://localhost/Abid/users/index.php");
     }
 
     include 'database/config.php';

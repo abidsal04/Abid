@@ -22,7 +22,7 @@
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="login.php">
+      <a class="navbar-brand" href="index.php">
         <img src="../assets/img/brand/think1.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="login.php">
+              <a href="index.php">
                 <img src="../assets/img/brand/think1.png">
               </a>
             </div>
@@ -46,12 +46,12 @@
         </div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a href="login.php" class="nav-link">
+            <a href="index.php" class="nav-link">
               <span class="nav-link-inner--text">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.php" class="nav-link">
+            <a href="index.php" class="nav-link">
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>

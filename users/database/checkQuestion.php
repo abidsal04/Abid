@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(!isset($_SESSION['name'])){
-        header("location: http://localhost/Login_signup/login.php");
+        header("location: http://localhost/Login_signup/index.php");
     }
 ?>
 

@@ -15,7 +15,7 @@
 
             if($updatequery){
                 // $_SESSION['msg'] = "Your password has been updated";
-                // header("location:login.php");
+                // header("location:index.php");
                 echo "Your password has been updated";
             }
             else{

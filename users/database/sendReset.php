@@ -37,7 +37,7 @@
             
                     if(mail($email, $subject, $body, $senders_email)){
                         // $_SESSION['msg'] = "Check your mail to reset your password";
-                        // header("location:login.php");
+                        // header("location:index.php");
                         echo "Check your mail to reset your password";
                     }
                     else{

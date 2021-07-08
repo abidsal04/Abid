@@ -45,21 +45,13 @@
           </div>
         </div>
         <ul class="navbar-nav mr-auto">
+          
           <li class="nav-item">
-            <a href="register.php" class="nav-link">
-              <span class="nav-link-inner--text">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="login.php" class="nav-link">
+            <a href="index.php" class="nav-link">
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="register.php" class="nav-link">
-              <span class="nav-link-inner--text">Register</span>
-            </a>
-          </li>
+          
         </ul>
         <hr class="d-lg-none" />
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">

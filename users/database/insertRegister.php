@@ -10,7 +10,11 @@
     $password = $_REQUEST['password'];
 
 
-    $token = bin2hex(random_bytes(15));
+    // $token = bin2hex(random_bytes(15)); //for php 7.
+
+    $str=rand(); //for php 5.6
+    $token = md5($str); //for php 5.6
+
     $pass = md5($password);
 
     $emailsql = "SELECT * FROM `credential` WHERE email='$email'";
