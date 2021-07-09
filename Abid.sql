@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 05, 2021 at 01:16 PM
--- Server version: 8.0.25-0ubuntu0.20.04.1
--- PHP Version: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Jul 09, 2021 at 07:17 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `thinkexam`
+-- Database: `abid`
 --
 
 -- --------------------------------------------------------
@@ -29,12 +29,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `credential` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `changeEmail` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
-  `profession` varchar(255) DEFAULT NULL,
+  `companyName` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `token` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
@@ -45,8 +46,11 @@ CREATE TABLE `credential` (
 -- Dumping data for table `credential`
 --
 
-INSERT INTO `credential` (`id`, `name`, `email`, `changeEmail`, `phone`, `profession`, `password`, `token`, `status`, `userType`) VALUES
-(1, 'Abid Saleem', 'abidsaleem04@gmail.com', '', '7800414290', 'Web Developer', 'e10adc3949ba59abbe56e057f20f883e', '80c944481e35ca94987ed68f4db285', 'active', 'Admin');
+INSERT INTO `credential` (`id`, `name`, `email`, `changeEmail`, `phone`, `companyName`, `address`, `password`, `token`, `status`, `userType`) VALUES
+(1, 'Abid Saleem', 'abidsaleem04@gmail.com', '', '7800414290', NULL, 'Web Developer', 'e10adc3949ba59abbe56e057f20f883e', '80c944481e35ca94987ed68f4db285', 'active', 'Admin'),
+(2, 'Test', 'test3@gmail.com', '', '9999999990', NULL, 'Developer', 'e10adc3949ba59abbe56e057f20f883e', '80c944481e35ca94987ed68f4dt890', 'active', 'User'),
+(3, 'Suvrat Agnihotri', 'suvrat72000@gmail.com', '', '8707089009', NULL, 'Java Developer', 'e10adc3949ba59abbe56e057f20f883e', 'edef0d9bd8c8efab754d2fabd3105338', 'active', 'User'),
+(4, 'Test', 'test003@gmail.com', '', '8979797097', 'Ginger Webs', 'Block A, Sector 58, Noida, India', 'e10adc3949ba59abbe56e057f20f883e', 'f2ee555e877c9bd7239e2a2d4e5c4f25', 'inactive', 'User');
 
 -- --------------------------------------------------------
 
@@ -55,7 +59,7 @@ INSERT INTO `credential` (`id`, `name`, `email`, `changeEmail`, `phone`, `profes
 --
 
 CREATE TABLE `question` (
-  `qid` int NOT NULL,
+  `qid` int(11) NOT NULL,
   `category` varchar(255) DEFAULT NULL,
   `question` varchar(255) DEFAULT NULL,
   `option1` varchar(255) DEFAULT NULL,
@@ -64,6 +68,7 @@ CREATE TABLE `question` (
   `option4` varchar(255) DEFAULT NULL,
   `correctOption` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 --
 -- Dumping data for table `question`
 --
@@ -83,7 +88,7 @@ INSERT INTO `question` (`qid`, `category`, `question`, `option1`, `option2`, `op
 --
 
 CREATE TABLE `result` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `score` varchar(255) DEFAULT NULL,
@@ -96,7 +101,8 @@ CREATE TABLE `result` (
 --
 
 INSERT INTO `result` (`id`, `name`, `email`, `score`, `status`, `test_id`) VALUES
-(1, 'Abid Saleem', 'abidsaleem04@gmail.com', '100', 'Pass', '1');
+(1, 'Abid Saleem', 'abidsaleem04@gmail.com', '100', 'Pass', '1'),
+(2, 'Suvrat', 'suvrat72000@gmail.com', '50', 'Fail', '2');
 
 -- --------------------------------------------------------
 
@@ -105,7 +111,7 @@ INSERT INTO `result` (`id`, `name`, `email`, `score`, `status`, `test_id`) VALUE
 --
 
 CREATE TABLE `testinfo` (
-  `test_id` int NOT NULL,
+  `test_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
   `negativeMarking` varchar(255) DEFAULT NULL,
@@ -119,8 +125,9 @@ CREATE TABLE `testinfo` (
 --
 
 INSERT INTO `testinfo` (`test_id`, `name`, `category`, `negativeMarking`, `passingMarks`, `report`, `publishDate`) VALUES
-(1, 'Hiring', 'PHP,JavaScript', 'No', '70', 'Not Generated', '2021-07-03'),
-(2, 'AIMT', 'Python', 'No', '75', 'Not Generated', '2021-07-03');
+(1, 'Hiring', 'PHP,JavaScript', 'No', '70', 'Generated', '2021-07-03'),
+(2, 'AIMT', 'Python', 'No', '75', 'Not Generated', '2021-07-03'),
+(4, 'ProTest', 'JavaScript', 'Yes', '80', 'Not Generated', '2021-07-08');
 
 --
 -- Indexes for dumped tables
@@ -158,25 +165,25 @@ ALTER TABLE `testinfo`
 -- AUTO_INCREMENT for table `credential`
 --
 ALTER TABLE `credential`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `qid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `qid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `testinfo`
 --
 ALTER TABLE `testinfo`
-  MODIFY `test_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `test_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

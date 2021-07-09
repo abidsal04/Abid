@@ -5,7 +5,8 @@ function checkregister()
     var name=document.getElementById("name").value;
     var email=document.getElementById("email").value;
     var phone=document.getElementById("phone").value;
-    var profession=document.getElementById("profession").value;
+    var companyName=document.getElementById("companyName").value;
+    var address=document.getElementById("address").value;
     var password=document.getElementById("password").value;
     var cpassword=document.getElementById("cpassword").value;
 
@@ -27,9 +28,13 @@ function checkregister()
     {
         document.getElementById("err").innerHTML="Enter Valid Phone Number!";
     }
-    else if(profession=="")
+    else if(companyName=="")
     {
-        document.getElementById("err").innerHTML="Enter Your profession!";
+        document.getElementById("err").innerHTML="Enter Your Company Name!";
+    }
+    else if(address=="")
+    {
+        document.getElementById("err").innerHTML="Enter Your Address!";
     }
     else if(password=="" || cpassword=="")
     {
@@ -42,7 +47,7 @@ function checkregister()
 
     else
     {
-        dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&profession=' + profession + '&password=' + password;
+        dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&companyName=' + companyName+ '&address=' + address + '&password=' + password;
 
         var xhr = new XMLHttpRequest();
 
@@ -54,7 +59,7 @@ function checkregister()
                 console.log(this.responseText);
                 document.getElementById("err").innerHTML=this.responseText;
                 document.getElementById("register").reset();
-                // window.location.href= "http://localhost/Abid/users/index.php";
+                // window.location.href= "../../index.php";
             }
         }
         xhr.send(dataString);

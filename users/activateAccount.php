@@ -1,5 +1,5 @@
 <?php 
-include "database/config.php";
+include "../config.php";
     session_start();
     
     if(isset($_GET['token'])){
@@ -9,18 +9,18 @@ include "database/config.php";
         $query = mysqli_query($con, $updatequery);
 
         if($query){
-            if(isset($_SESSION['msg'])){
-                $_SESSION['msg'] = "Account activated succesfully";
+            if(isset($_SESSION['user']['msg'])){
+                $_SESSION['user']['msg'] = "Account activated succesfully";
                 header("location:index.php");
             }
             else{
-                $_SESSION['msg'] = "You are logged out";
+                $_SESSION['user']['msg'] = "You are logged out";
                 header("location:index.php");
             }
         }
         
         else{
-            $_SESSION['msg'] = "Account not activated";
+            $_SESSION['user']['msg'] = "Account not activated";
             header("location:signup.php");
         }
         

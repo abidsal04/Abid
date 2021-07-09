@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
+    if(!isset($_SESSION['user']['name'])){
       header("location:index.php");
     }
 ?>
@@ -59,8 +59,8 @@
                     <tbody class="list">
 
                     <?php 
-                        include 'database/config.php';
-                        $email = $_SESSION['email'];
+                        include '../config.php';
+                        $email = $_SESSION['user']['email'];
                         $testSql = "SELECT `test_id` FROM `result` WHERE `email`='$email'";
                         $testQuery = mysqli_query($con, $testSql);
                         $testGiven = array();

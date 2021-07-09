@@ -1,5 +1,5 @@
 <?php
-            include_once "config.php";
+            include_once "../../config.php";
                 $email = $_POST['email'];
 
                 $emailsql = "SELECT * FROM `credential` WHERE email='$email'";
@@ -36,7 +36,7 @@
                 $senders_email = "From: abidsaleem003@gmail.com";
             
                     if(mail($email, $subject, $body, $senders_email)){
-                        // $_SESSION['msg'] = "Check your mail to reset your password";
+                        // $_SESSION['user']['msg'] = "Check your mail to reset your password";
                         // header("location:index.php");
                         echo "Check your mail to reset your password";
                     }

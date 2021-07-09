@@ -1,13 +1,13 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
-        header("location: http://localhost/Abid/users/index.php");
+    if(!isset($_SESSION['user']['name'])){
+        header("location: index.php");
     }
 
-    include 'database/config.php';
+    include '../config.php';
     $test_id = $_GET['test_id'];
 
-    $email = $_SESSION['email'];
+    $email = $_SESSION['user']['email'];
     $testSql = "SELECT `test_id` FROM `result` WHERE `email`='$email'";
     $testQuery = mysqli_query($con, $testSql);
     $testGiven = array();
@@ -16,7 +16,7 @@
     }
 
     if (in_array($test_id, $testGiven)){
-        header("location: http://localhost/Abid/users/tests.php");
+        header("location: tests.php");
     }
 ?>
 
@@ -124,7 +124,7 @@
             </div><br>
 
             <p style="text-align: center;">   
-                <a class="cancel" href="http://localhost/Abid/users/tests.php">Cancel</a>
+                <a class="cancel" href="tests.php">Cancel</a>
             </p>
             
             <!-- footer -->

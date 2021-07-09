@@ -1,12 +1,12 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adminName'])){
+    if(!isset($_SESSION['admin']['name'])){
       header("location:index.php");
     }
 ?>
 
 <?php
-    include 'config.php';
+    include '../../config.php';
 
     $test_id = $_GET['test_id'];
 

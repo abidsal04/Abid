@@ -1,13 +1,13 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adminName'])){
+    if(!isset($_SESSION['admin']['name'])){
       header("location:index.php");
     }
 ?>
 
 <?php
 
-    require 'config.php';
+    require '../../config.php';
 
     $name = $_REQUEST['testName'];
     $negativeMarking = $_REQUEST['negativeMarking'];
@@ -24,8 +24,8 @@
     // $testinfo = mysqli_fetch_assoc($getquery);
     // $test_id = $testinfo['MAX(test_id)'];
 
-    // $_SESSION['totalQuestions'] = $totalQuestions;
-    // $_SESSION['test_id'] = $test_id;
+    // $_SESSION['admin']['totalQuestions'] = $totalQuestions;
+    // $_SESSION['admin']['test_id'] = $test_id;
 
     echo "Success";
 

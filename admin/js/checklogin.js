@@ -36,7 +36,7 @@ function checklogin()
                 // console.log(this.responseText);
                 resp = this.responseText;
                 if(resp=="Success"){
-                    window.location.href= "http://localhost/Abid/admin/admin.php";
+                    window.location.href= "admin.php";
                 }
                 else{
                     // console.log(resp);

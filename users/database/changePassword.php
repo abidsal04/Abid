@@ -2,7 +2,7 @@
 
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
+    if(!isset($_SESSION['user']['name'])){
       header("location:index.php");
     }
 ?>
@@ -10,9 +10,9 @@
 <?php
 
 
-        include_once "config.php";
+        include_once "../../config.php";
 
-        $email = $_SESSION['email'];
+        $email = $_SESSION['user']['email'];
 
         $newpassword = mysqli_real_escape_string($con, $_POST['newpassword']);
         $oldpassword = mysqli_real_escape_string($con, $_POST['oldpassword']);

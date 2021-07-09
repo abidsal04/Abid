@@ -1,5 +1,17 @@
 <?php
     session_start();
-    session_destroy();
+    unset($_SESSION['user']['id']);
+    unset($_SESSION['user']['name']);
+    unset($_SESSION['user']['email']);
+    unset($_SESSION['user']['phone']);
+    unset($_SESSION['user']['companyName']);
+    unset($_SESSION['user']['address']);
+    unset($_SESSION['user']['address']);
+    if(isset($_SESSION['user']['checkMail'])){
+        unset($_SESSION['user']['checkMail']);
+    }
+    if(isset($_SESSION['user']['msg'])){
+        unset($_SESSION['user']['msg']);
+    }
     header("location:index.php");
 ?>

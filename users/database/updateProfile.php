@@ -1,23 +1,24 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
-        header("location: http://localhost/Login_signup/index.php");
+    if(!isset($_SESSION['user']['name'])){
+        header("location: ../../index.php");
     }
 ?>
 
 
 <?php
-    require 'config.php';
+    require '../../config.php';
 
     $name = $_REQUEST['name'];
     $newEmail = $_REQUEST['email'];
     $phone = $_REQUEST['phone'];
-    $profession = $_REQUEST['profession'];
+    $companyName = $_REQUEST['companyName'];
+    $address = $_REQUEST['address'];
 
-    $email = $_SESSION['email'];
+    $email = $_SESSION['user']['email'];
 
     if($newEmail==$email){
-        $updatesql= "UPDATE `credential` SET `name` = '$name', `phone` = '$phone', `profession` = '$profession' WHERE `email` = '$email';";
+        $updatesql= "UPDATE `credential` SET `name` = '$name', `phone` = '$phone', `companyName` = '$companyName', `address` = '$address' WHERE `email` = '$email';";
         $updateqry = mysqli_query($con, $updatesql);
     }
     else{
@@ -27,14 +28,14 @@
         $emailcount = mysqli_num_rows($query);
 
         if($emailcount>0){
-            $_SESSION['checkMail'] = "Email already exist.";
+            $_SESSION['user']['checkMail'] = "Email already exist.";
         }
         else{
-            $sql= "UPDATE `credential` SET `name` = '$name', `changeEmail` = '$newEmail', `phone` = '$phone', `profession` = '$profession' WHERE `email` = '$email';";
+            $sql= "UPDATE `credential` SET `name` = '$name', `changeEmail` = '$newEmail', `phone` = '$phone', `companyName` = '$companyName', `address` = '$address' WHERE `email` = '$email';";
             $qry = mysqli_query($con, $sql);
 
-            $_SESSION['checkMail'] = "Check Your mail to activate your new email.";
-            $token = $_SESSION['token'];
+            $_SESSION['user']['checkMail'] = "Check Your mail to activate your new email.";
+            $token = $_SESSION['user']['token'];
 
             // sending activation mail
             $subject = "Think Exam Email Verification";
@@ -63,7 +64,7 @@
                                 $senders_email = "From: abidsaleem003@gmail.com";
                             
                                 if(mail($newEmail, $subject, $body, $senders_email)){
-                                    $_SESSION['msg'] = "Check your mail to activate your account $newEmail";
+                                    $_SESSION['user']['msg'] = "Check your mail to activate your account $newEmail";
                                     echo "Please, check your email to activate your account";
                                 }
                                 else{
@@ -73,10 +74,11 @@
     }
 
         
-        $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
-        $_SESSION['profession'] = $profession;
-        $_SESSION['phone'] = $phone;
+        $_SESSION['user']['name'] = $name;
+        $_SESSION['user']['email'] = $email;
+        $_SESSION['user']['companyName'] = $companyName;
+        $_SESSION['user']['address'] = $address;
+        $_SESSION['user']['phone'] = $phone;
 
 
 ?>

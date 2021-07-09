@@ -1,7 +1,7 @@
 <?php
 
 
-        include_once "config.php";
+        include_once "../../config.php";
 
 
             $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -14,12 +14,12 @@
             $updatequery = mysqli_query($con, $updatesql);
 
             if($updatequery){
-                // $_SESSION['msg'] = "Your password has been updated";
+                // $_SESSION['user']['msg'] = "Your password has been updated";
                 // header("location:index.php");
                 echo "Your password has been updated";
             }
             else{
-                // $_SESSION['msg'] = "update error";
+                // $_SESSION['user']['msg'] = "update error";
                 // header("location:reset_password.php?token=$token");
                 echo "update error";
             }

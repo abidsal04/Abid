@@ -1,12 +1,12 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
-        header("location: http://localhost/Login_signup/index.php");
+    if(!isset($_SESSION['user']['name'])){
+        header("location: ../index.php");
     }
 ?>
 
 <?php 
-    include "config.php"; 
+    include "../../config.php"; 
 
     if(isset($_POST['submit'])){
             $test_id = $_POST['test_id'];
@@ -57,8 +57,8 @@
                 $status = 'Fail';
             }
 
-            $name = $_SESSION['name'];
-            $email = $_SESSION['email'];
+            $name = $_SESSION['user']['name'];
+            $email = $_SESSION['user']['email'];
     
             $insertsql = "INSERT INTO `result` (`name`, `email`, `score`, `status`, `test_id`) VALUES ('$name', '$email', '$score', '$status', '$test_id')";
             $insertquery = mysqli_query($con, $insertsql);
@@ -102,7 +102,7 @@
     <h1 style="text-align: center;">Thank You!</h1>
     <p style="text-align: center;">Your submission has been received. We will notify you on mail.</p>
     <p style="text-align: center;">   
-        <a class="button" href="http://localhost/Abid/users/profile.php">Home</a>
+        <a class="button" href="../profile.php">Home</a>
     </p>
 </div>
 </body>

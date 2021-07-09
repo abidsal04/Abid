@@ -160,7 +160,15 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-badge"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Profession" type="text" id="profession">
+                    <input class="form-control" placeholder="Company Name" type="text" id="companyName">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Address" type="text" id="address">
                   </div>
                 </div>
                 <div class="form-group">

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['name'])){
+    if(!isset($_SESSION['user']['name'])){
       header("location:index.php");
     }
 ?>
@@ -22,13 +22,13 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello <?php echo $_SESSION['name']; ?></h1>
+            <h1 class="display-2 text-white">Hello <?php echo $_SESSION['user']['name']; ?></h1>
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
             <input id="edit" onClick="editEnable()" class="btn btn-primary" value="Edit Profile" type="button" name="edit">
             <input id="edit" onClick="passwordEnable()" class="btn btn-primary" value="Change Password" type="button" name="change">
             <h4 style="color:red;">
-              <?php if(isset($_SESSION['checkMail'])){
-                    echo $_SESSION['checkMail'];
+              <?php if(isset($_SESSION['user']['checkMail'])){
+                    echo $_SESSION['user']['checkMail'];
               } ?>
             </h4>
           </div>
@@ -123,13 +123,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="name">Name</label>
-                        <input type="text" id="name" class="form-control" value="<?php echo $_SESSION['name']; ?>" disabled>
+                        <input type="text" id="name" class="form-control" value="<?php echo $_SESSION['user']['name']; ?>" disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="email">Email address</label>
-                        <input type="email" id="email" class="form-control" value="<?php echo $_SESSION['email']; ?>" disabled>
+                        <input type="email" id="email" class="form-control" value="<?php echo $_SESSION['user']['email']; ?>" disabled>
                       </div>
                     </div>
                   </div>
@@ -137,13 +137,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="phone">Phone</label>
-                        <input type="text" id="phone" class="form-control" value="<?php echo $_SESSION['phone']; ?>" disabled>
+                        <input type="text" id="phone" class="form-control" value="<?php echo $_SESSION['user']['phone']; ?>" disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="profession">Profession</label>
-                        <input type="text" id="profession" class="form-control" value="<?php echo $_SESSION['profession']; ?>" disabled>
+                        <label class="form-control-label" for="companyName">Company Name</label>
+                        <input type="text" id="companyName" class="form-control" value="<?php echo $_SESSION['user']['companyName']; ?>" disabled>
                       </div>
                     </div>
                   </div>
@@ -155,8 +155,8 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text" disabled>
+                        <label class="form-control-label" for="address">Address</label>
+                        <input type="text" id="address" class="form-control" value="<?php echo $_SESSION['user']['address']; ?>" disabled>
                       </div>
                     </div>
                   </div>

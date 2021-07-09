@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adminName'])){
+    if(!isset($_SESSION['admin']['name'])){
       header("location:index.php");
     }
 ?>
@@ -62,7 +62,7 @@
                     <tbody class="list">
 
                     <?php 
-                        include 'database/config.php';
+                        include '../config.php';
 
                         $getSql = "SELECT * FROM `testinfo`";
                         $getQuery = mysqli_query($con, $getSql);

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adminName'])){
+    if(!isset($_SESSION['admin']['name'])){
       header("location:index.php");
     }
 ?>
@@ -8,7 +8,7 @@
 
 <?php
 
-    require 'config.php';
+    require '../../config.php';
 
     $category = $_REQUEST['category'];
     $question = $_REQUEST['question'];

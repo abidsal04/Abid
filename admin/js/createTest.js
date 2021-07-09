@@ -49,7 +49,7 @@ function submitDetail()
             xhr.onreadystatechange=function(){
                 if(xhr.status==200){
                     console.log(this.responseText);
-                    window.location.href = "http://localhost/Abid/admin/tests.php";
+                    window.location.href = "admin/tests.php";
 
                 }
             }
@@ -129,7 +129,7 @@ function submitDetail()
 //             xhr.onreadystatechange=function(){
 //                 if(xhr.status==200){
 //                     console.log(this.responseText);
-//                     window.location.href= "http://localhost/Abid/admin/tests.php";
+//                     window.location.href= "admin/tests.php";
 
 //                 }
 //             }

@@ -1,12 +1,13 @@
 <?php
 
         
-    require 'config.php';
+    require '../../config.php';
 
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
     $phone = $_REQUEST['phone'];
-    $profession = $_REQUEST['profession'];
+    $companyName = $_REQUEST['companyName'];
+    $address = $_REQUEST['address'];
     $password = $_REQUEST['password'];
 
 
@@ -26,7 +27,7 @@
         echo "Email already exist.";
     }
     else {
-        $insertsql= "INSERT INTO `credential` (`name`, `email`, `changeEmail`, `phone`, `profession`, `password`, `token`, `status`, `userType`) VALUES ('$name', '$email', '', '$phone', '$profession', '$pass', '$token', 'inactive', 'User');";
+        $insertsql= "INSERT INTO `credential` (`name`, `email`, `changeEmail`, `phone`, `companyName`, `address`, `password`, `token`, `status`, `userType`) VALUES ('$name', '$email', '', '$phone', '$companyName', '$address', '$pass', '$token', 'inactive', 'User');";
         $insertquery = mysqli_query($con, $insertsql);
 
             if($insertquery){
@@ -58,7 +59,7 @@
                                 $senders_email = "From: abidsaleem003@gmail.com";
                             
                                 if(mail($email, $subject, $body, $senders_email)){
-                                    $_SESSION['msg'] = "Check your mail to activate your account $email";
+                                    $_SESSION['user']['msg'] = "Check your mail to activate your account $email";
                                     echo "You've been registered successfully.
                                     Please, check your email to activate your account";
                                 }

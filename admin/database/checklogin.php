@@ -1,6 +1,6 @@
 <?php
         session_start();
-        include_once "config.php";
+        include_once "../../config.php";
             
 
         $email = $_REQUEST['email'];
@@ -10,26 +10,22 @@
 
             $pass = md5($password);
 
-            $emailsearch = "SELECT * FROM `credential` WHERE email='$email' AND `userType`='Admin'";
-            $query = mysqli_query($con, $emailsearch);
+            $SQL = "SELECT * FROM `credential` WHERE email='$email' AND `userType`='Admin'";
+            $QRY = mysqli_query($con, $SQL);
 
-            $emailcount = mysqli_num_rows($query);
+            $emailcount = mysqli_num_rows($QRY);
 
             if($emailcount){
-                $email_pass = mysqli_fetch_assoc($query);
+                $email_pass = mysqli_fetch_assoc($QRY);
                 $db_pass = $email_pass['password'];
-                $pass = md5($password);
-
-                
-
 
                 if($db_pass==$pass){
                     echo "Success";
-                    $_SESSION['id'] = $email_pass['id'];
-                    $_SESSION['adminName'] = $email_pass['name'];   
-                    $_SESSION['email'] = $email_pass['email'];
-                    $_SESSION['phone'] = $email_pass['phone'];
-                    $_SESSION['profession'] = $email_pass['profession'];
+                    $_SESSION['admin']['id'] = $email_pass['id'];
+                    $_SESSION['admin']['name'] = $email_pass['name'];   
+                    $_SESSION['admin']['email'] = $email_pass['email'];
+                    $_SESSION['admin']['phone'] = $email_pass['phone'];
+                    $_SESSION['admin']['profession'] = $email_pass['profession'];
                 }
                 else {
                     echo "Invalid password";

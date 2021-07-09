@@ -110,7 +110,7 @@
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['adminName']; ?></h4>
+                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['admin']['name']; ?></h4>
                           </div>
                           <div class="text-right text-muted">
                             <small>2 hrs ago</small>
@@ -129,7 +129,7 @@
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['adminName'] ; ?></h4>
+                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['admin']['name'] ; ?></h4>
                           </div>
                           <div class="text-right text-muted">
                             <small>3 hrs ago</small>
@@ -148,7 +148,7 @@
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['adminName'] ; ?></h4>
+                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['admin']['name'] ; ?></h4>
                           </div>
                           <div class="text-right text-muted">
                             <small>5 hrs ago</small>
@@ -167,7 +167,7 @@
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['adminName'] ; ?></h4>
+                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['admin']['name'] ; ?></h4>
                           </div>
                           <div class="text-right text-muted">
                             <small>2 hrs ago</small>
@@ -186,7 +186,7 @@
                       <div class="col ml--2">
                         <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['adminName'] ; ?></h4>
+                            <h4 class="mb-0 text-sm"><?php echo $_SESSION['admin']['name'] ; ?></h4>
                           </div>
                           <div class="text-right text-muted">
                             <small>3 hrs ago</small>
@@ -210,7 +210,7 @@
                     <i class="ni ni-circle-08 text-default"></i>
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['adminName'] ; ?></span>
+                    <span class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['admin']['name'] ; ?></span>
                   </div>
                 </div>
               </a>

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adminName'])){
+    if(!isset($_SESSION['admin']['name'])){
       header("location:index.php");
     }
 ?>
@@ -50,7 +50,7 @@
                 <div id="accordion">
 
                     <?php 
-                        include 'database/config.php';
+                        include '../config.php';
 
                         $getSql = "SELECT DISTINCT `category` FROM `question`";
                         $getQuery = mysqli_query($con, $getSql);

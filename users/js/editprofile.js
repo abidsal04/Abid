@@ -2,7 +2,8 @@ function editEnable(){
     document.getElementById("name").disabled = false;
     document.getElementById("email").disabled = false;
     document.getElementById("phone").disabled = false;
-    document.getElementById("profession").disabled = false;
+    document.getElementById("companyName").disabled = false;
+    document.getElementById("address").disabled = false;
     document.getElementById("update").disabled = false;
 
 }
@@ -13,7 +14,8 @@ function update(){
     var name=document.getElementById("name").value;
     var email=document.getElementById("email").value;
     var phone=document.getElementById("phone").value;
-    var profession=document.getElementById("profession").value;
+    var companyName=document.getElementById("companyName").value;
+    var address=document.getElementById("address").value;
 
     err=""
 
@@ -31,15 +33,19 @@ function update(){
     {
         document.getElementById("err").innerHTML="Enter Valid Phone Number!";
     }
-    else if(profession=="")
+    else if(companyName=="")
         {
-            document.getElementById("err").innerHTML="Enter profession";
+            document.getElementById("err").innerHTML="Enter Company Name";
         }
+    else if(address=="")
+    {
+        document.getElementById("err").innerHTML="Enter Address";
+    }
 
     else
     {
 
-        dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&profession=' + profession;
+        dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&companyName=' + companyName+ '&address=' + address;
 
         var xhr = new XMLHttpRequest();
 
@@ -53,7 +59,8 @@ function update(){
                 document.getElementById("name").disabled = true;
                 document.getElementById("email").disabled = true;
                 document.getElementById("phone").disabled = true;
-                document.getElementById("profession").disabled = true;
+                document.getElementById("companyName").disabled = true;
+                document.getElementById("address").disabled = true;
                 document.getElementById("update").disabled = true;
                 location.reload();
             }
