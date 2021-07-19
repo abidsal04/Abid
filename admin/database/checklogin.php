@@ -25,7 +25,7 @@
                     $_SESSION['admin']['name'] = $email_pass['name'];   
                     $_SESSION['admin']['email'] = $email_pass['email'];
                     $_SESSION['admin']['phone'] = $email_pass['phone'];
-                    $_SESSION['admin']['profession'] = $email_pass['profession'];
+                    $_SESSION['admin']['companyName'] = $email_pass['companyName'];
                 }
                 else {
                     echo "Invalid password";

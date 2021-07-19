@@ -50,7 +50,7 @@
                         <th scope="col" class="sort" data-sort="budget">NAME</th>
                         <th scope="col" class="sort" data-sort="status">EMAIL</th>
                         <th scope="col" class="sort" data-sort="completion">PHONE</th>
-                        <th scope="col" class="sort" data-sort="completion">PROFESSION</th>
+                        <th scope="col" class="sort" data-sort="completion">Company Name</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
@@ -71,7 +71,7 @@
                         <td><?php echo $rows['name'] ?></td>
                         <td><?php echo $rows['email'] ?></td>
                         <td><?php echo $rows['phone'] ?></td>
-                        <td><?php echo $rows['profession'] ?></td>
+                        <td><?php echo $rows['companyName'] ?></td>
 
                         <td class="text-right">
                           <div class="dropdown">
